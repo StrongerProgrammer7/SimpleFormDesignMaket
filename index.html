@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="progress.css">
 	<title>Checklist</title>
 </head>
 <body>
@@ -11,8 +12,17 @@
 		<div class="checklist">
 			<div class="checklist__content">
 				<div class="checklist__count">
-					<p class="checklist__count_text">0/7</p>
-					<div class="checklist__count_progress"></div>
+					<div class="progressbar over_50">	
+						<div class="piece left">	</div>
+						<div class="piece right" >	</div>
+						<div class="checklist__count_wrapper-text">
+							<p class="checklist__count_text">5/7</p>
+						</div>
+						<div class="progressbar_border"></div>
+					</div>
+					
+					
+					<!-- <div class="checklist__count_progress"></div> -->
 				</div>
 				<div class="checklist__info">
 					<a href="#!" class="checklist__info-link">Чеклист</a>

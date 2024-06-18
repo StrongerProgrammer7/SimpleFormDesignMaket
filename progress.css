@@ -1,0 +1,113 @@
+:root {
+	--progress: 70; /* Процент заполнения */
+  }
+  .progressbar 
+  {
+	  width: 60px;
+	  height: 60px;
+	  border-radius: 50%;
+	  background: rgb(255, 255, 255);
+	  position: relative;
+	  overflow: hidden;
+  }
+  
+  
+  
+  .progressbar::before 
+  {
+	  content: '';
+	  display: block;
+	  position: absolute;
+  
+	  top: 2px;
+	  right: 2px;
+	  bottom: 2px;
+	  left: 2px;
+	  border-radius: 50%;
+	  background: #3579F5;
+	  z-index: 3;
+  }
+  
+  .progressbar .piece 
+  {
+	  width: 100%;
+	  height: 100%;
+	  position: absolute;
+	  left: 0;
+	  right: 0;
+	  overflow: hidden;
+  }
+  
+  .progressbar .piece::before 
+  {
+	  content: '';
+	  display: block;
+	  position: absolute;
+	  width: 50%;
+	  height: 100%;
+  }
+  
+  .progressbar .piece.left 
+  {
+	  transform: rotate(0deg);
+	  border-radius: 50%;
+	  z-index: 2;
+  }
+  
+  .progressbar .left::before 
+  {
+	  background: #3579F5;
+  }
+  
+  .progressbar .piece.right 
+  {
+	  transform: rotate(calc(180deg + var(--progress) * 3.6deg));
+	  border-radius: 50%;
+  }
+  
+  .progressbar .right::before 
+  {
+	  background: #3579F5;
+  }
+  
+  
+  .progressbar.over_50 .piece.left 
+  {
+	  transform: rotate(calc(var(--progress) * 3.6deg));
+  }
+  
+  .progressbar.over_50 .piece.right 
+  {
+	  transform: rotate(360deg);
+  }
+  
+  .progressbar.over_50 .piece.left::before 
+  {
+	  background: #fff;
+  }
+  
+  .checklist__count_wrapper-text
+  {
+	  position: absolute;
+	  z-index: 3;
+	  top:0;
+	  left:0;
+	  right:0;
+	  bottom:0;
+	  text-align: center;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+  }
+  
+  .progressbar_border
+  {
+	  border: 1.2px solid rgba(255,255,255,0.8);
+	  border-radius: 50%;
+	  width: 59px;
+	  height: 59px;
+	  position: absolute;
+	  z-index: 4;
+	  top: 0.5px;
+	  left: 0.5px;
+  }
